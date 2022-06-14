@@ -4,6 +4,7 @@ namespace ab
 {
     internal class Program
     {
+        public const int IsPartTime = 2;
         public const int IsFullTime = 1;
         public const int IsAbsent = 0;
         static void Main(string[] args)
@@ -18,7 +19,7 @@ namespace ab
             int WagePerHr = 20;
 
             Random random = new Random();
-            int number = random.Next(0, 2);
+            int number = random.Next(0, 3);
             Program program = new Program();
             int empHrs = program.GetEmpHrs(number);
 
@@ -36,7 +37,11 @@ namespace ab
                 Console.WriteLine(number);
                 empHrs = 8;
             }
-
+            else if (number == IsPartTime)
+            {
+                Console.WriteLine(number);
+                empHrs = 4;
+            }
             else
             {
                 empHrs = 0;
@@ -47,6 +52,7 @@ namespace ab
         }
     }
 }
+
 
 
 
