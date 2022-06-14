@@ -3,31 +3,51 @@
 namespace ab
 {
     internal class Program
-{
-    static void Main(string[] args)
     {
-        Program program = new Program();
-        program.GetemployeeAttendance();
-
-    }
-
-    public void GetemployeeAttendance()
-    {
-        Random random = new Random();
-        int value = random.Next(0, 2);
-        if (value == 0)
+        public const int IsFullTime = 1;
+        public const int IsAbsent = 0;
+        static void Main(string[] args)
         {
-            Console.WriteLine("Employee is absent");
-            Console.WriteLine(value);
+            Program program = new Program();
+            program.GetEmployeeWage();
         }
-        else
+
+        public void GetEmployeeWage()
         {
-            Console.WriteLine("Employee is present");
-            Console.WriteLine(value);
+
+            int WagePerHr = 20;
+
+            Random random = new Random();
+            int number = random.Next(0, 2);
+            Program program = new Program();
+            int empHrs = program.GetEmpHrs(number);
+
+            int Wage = WagePerHr * empHrs;
+
+            Console.WriteLine("Total wage is " + Wage);
+        }
+
+        public int GetEmpHrs(int number)
+        {
+            int empHrs = 0;
+
+            if (number == IsFullTime)
+            {
+                Console.WriteLine(number);
+                empHrs = 8;
+            }
+
+            else
+            {
+                empHrs = 0;
+                Console.WriteLine(number);
+            }
+            return empHrs;
+
         }
     }
 }
-}
+
 
 
 
