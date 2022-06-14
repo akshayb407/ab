@@ -3,7 +3,8 @@
 namespace ab
 {
     internal class Program
-     {
+    {
+       
         public const int IsPartTime = 2;
         public const int IsFullTime = 1;
         public const int IsAbsent = 0;
